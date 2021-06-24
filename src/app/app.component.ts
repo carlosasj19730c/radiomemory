@@ -13,7 +13,8 @@ export class AppComponent implements OnInit {
   
   uploadedFiles: FileHandle[] | undefined;  
     constructor() {}  
-    ngOnInit(): void {}  
+    ngOnInit(): void {} 
+     
     filesDropped(files: FileHandle[]) {  
         this.uploadedFiles = files;  
     }  
