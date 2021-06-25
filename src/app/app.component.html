@@ -8,13 +8,19 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1,
-  h2,
   h3,
   h4,
   h5,
   h6 {
     margin: 8px 0;
+  }
+
+  h2 {
+    color: rgb(19, 65, 124);
+  }
+
+  h1 {
+    color: rgb(19, 65, 124);
   }
 
   p {
@@ -295,35 +301,37 @@
 
   .divHeader {
     max-width: 990px;
+    height: 77.2px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .divLogo {
+    width: 495px;
+    height: 77.2px;
+    float: left;
+  }
+
+  .divTextLogo {
+    width: 495px;
+    float: right;
+    height: 77.2px;
   }
 </style>
 
 <header>
   <div class="divHeader">
-    <div>
+    <div class="divLogo">
       <a href="https://radiomemory.com.br" target="_self" title="Site institucional Radio Memory">
         <img src="https://d335luupugsy2.cloudfront.net/cms/files/132167/1594922708/$5daggb9ugrf" alt="">
       </a>
     </div>
-    <div>
-      Há 25 anos servindo à Radiologia Odontológica
+    <div class="divTextLogo">
+      <br>
+      <p style="text-align: right;">Há 25 anos servindo à Radiologia Odontológica</p>
     </div>
   </div>
-  
 </header>
-<section>
-  <div class="example-label">Basic</div>
-  <div class="example-button-row">
-    <button mat-button>Basic</button>
-    <button mat-button color="primary">Primary</button>
-    <button mat-button color="accent">Accent</button>
-    <button mat-button color="warn">Warn</button>
-    <button mat-button disabled>Disabled</button>
-    <a mat-button href="https://www.google.com/" target="_blank">Link</a>
-  </div>
-</section>
 <div class="content" role="main">
   <!-- Resources -->
   <h2>RADIO MEMORY AI API</h2>
@@ -346,30 +354,29 @@
     description.
   </p>
 
+  <div><br><br></div>
 
-  <div    
-  style="width: 500px; height: 250px; text-align: center;"    
-  appDnd    
-  (files)="filesDropped($event)"    
->  
-   <span style="font-size: 25px;">Drop your files here</span>  
-   <input type="file" />
-</div>  
-<div style="margin-top: 20px; width: 500px; height: 400px;">  
-   <div *ngFor="let file of uploadedFiles">  
-       <img [src]="file.url" style="width: 100px; height: 100px;" />  
-   </div>  
-</div>     
+  <div class="dropzone" style="width: 500px; height: 250px; text-align: center;" appDnd (files)="filesDropped($event)">
+    <svg xmlns="http://www.w3.org/2000/svg" width="106" height="116" fill="currentColor" class="bi bi-upload"
+      viewBox="0 0 16 16">
+      <path
+        d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+      <path
+        d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z" />
+    </svg>
+    <br>
+    <span style="font-size: 25px;">Cole sua imagem aqui</span>
 
-  <!-- <div class="dropzone" appDnd>
+    <h3>Ou</h3>
+    <label for="fileDropRef"><span style="font-size: 25px;">Pesquise sua imagem</span></label>
     <input type="file" #fileDropRef id="fileDropRef" />
-    <h3>Drag and drop file here</h3>
-  </div> -->
 
-  <!-- Footer -->
-  <footer>
-
-  </footer>
+  </div>
+  <div style="margin-top: 20px; width: 500px; height: 400px;">
+    <div *ngFor="let file of uploadedFiles">
+      <img [src]="file.url" style="width: 100px; height: 100px;" />
+    </div>
+  </div>
 
 
 
